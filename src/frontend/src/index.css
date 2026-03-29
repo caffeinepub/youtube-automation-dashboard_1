@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/assets/fonts/PlusJakartaSans.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+
+    /* TubeFlow dark dashboard palette */
+    /* #0B0F14 near-black bg */
+    --background: 0.112 0.012 243;
+    /* #E7EDF5 primary text */
+    --foreground: 0.92 0.012 243;
+
+    /* #141B24 panel */
+    --card: 0.148 0.016 243;
+    --card-foreground: 0.92 0.012 243;
+
+    /* #141B24 popover */
+    --popover: 0.155 0.018 243;
+    --popover-foreground: 0.92 0.012 243;
+
+    /* accent blue #2F6FED */
+    --primary: 0.52 0.18 258;
+    --primary-foreground: 0.98 0 0;
+
+    /* secondary dark panel #1A2333 */
+    --secondary: 0.19 0.02 243;
+    --secondary-foreground: 0.78 0.01 243;
+
+    /* muted #202A37 */
+    --muted: 0.21 0.02 243;
+    --muted-foreground: 0.63 0.015 243;
+
+    /* accent amber #F59E0B */
+    --accent: 0.76 0.16 70;
+    --accent-foreground: 0.13 0.01 243;
+
+    /* destructive */
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    /* border #243041 */
+    --border: 0.265 0.025 243;
+    --input: 0.265 0.025 243;
+    --ring: 0.52 0.18 258;
+
+    --chart-1: 0.52 0.18 258;
+    --chart-2: 0.76 0.16 70;
+    --chart-3: 0.6 0.14 160;
+    --chart-4: 0.65 0.2 300;
+    --chart-5: 0.7 0.15 30;
+
+    /* sidebar #111822 */
+    --sidebar: 0.132 0.015 243;
+    --sidebar-foreground: 0.92 0.012 243;
+    --sidebar-primary: 0.52 0.18 258;
+    --sidebar-primary-foreground: 0.98 0 0;
+    --sidebar-accent: 0.19 0.02 243;
+    --sidebar-accent-foreground: 0.92 0.012 243;
+    --sidebar-border: 0.265 0.025 243;
+    --sidebar-ring: 0.52 0.18 258;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
+    color-scheme: dark;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: oklch(0.132 0.015 243);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: oklch(0.265 0.025 243);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: oklch(0.35 0.03 243);
+  }
+
+  /* Line-numbered textarea overlay */
+  .line-numbers {
+    counter-reset: line;
+  }
+  .line-numbers span {
+    counter-increment: line;
+  }
+  .line-numbers span::before {
+    content: counter(line);
+  }
+}
